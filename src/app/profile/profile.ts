@@ -7,6 +7,8 @@ import { TitleStrategy } from "@angular/router";
     })
 export class ProfileComponenet {
  
+    age:number|string=25;
+
     HandleClick(){
         alert("Button Clicked");
         console.log("Button Clicked");
@@ -14,5 +16,8 @@ export class ProfileComponenet {
     }
     otherfun(){
         console.log("Other function called");
+    }
+    changeAge(newAge: string) {
+    this.age = newAge;
     }
 }
