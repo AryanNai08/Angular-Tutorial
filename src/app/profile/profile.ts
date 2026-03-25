@@ -17,7 +17,7 @@ export class ProfileComponenet {
     otherfun(){
         console.log("Other function called");
     }
-    changeAge(newAge: string) {
+    changeAge(newAge: string | number) {
     this.age = newAge;
     }
 }

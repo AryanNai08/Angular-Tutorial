@@ -1,0 +1,25 @@
+#inc{
+    background-color: blue;
+    color: white;
+    border-radius: 20px;
+    height: 30px;
+    width: auto;
+}
+
+#reset{
+    background-color:brown;
+    color: white;
+    border-radius: 20px;
+    height: 30px;
+    width: auto;
+}
+
+#dec{
+    background-color:coral;
+    color: white;
+    border-radius: 20px;
+    height: 30px;
+    width: auto;
+}
+
+    
