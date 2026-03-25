@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { TitleStrategy } from "@angular/router";
 @Component({
         selector:'app-profile',
         templateUrl:'./profile.html',
@@ -6,4 +7,12 @@ import { Component } from "@angular/core";
     })
 export class ProfileComponenet {
  
+    HandleClick(){
+        alert("Button Clicked");
+        console.log("Button Clicked");
+        this.otherfun();    
+    }
+    otherfun(){
+        console.log("Other function called");
+    }
 }
