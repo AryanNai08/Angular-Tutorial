@@ -4,10 +4,11 @@ import { Login } from './login/login';
 import { ProfileComponenet } from './profile/profile';
 import { count } from 'rxjs';
 import { Countercomponent } from './countercomponent/countercomponent';
+import { StyleOperaterComponenet } from './style-operater-componenet/style-operater-componenet';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Login,ProfileComponenet,Countercomponent],
+  imports: [RouterOutlet,Login,ProfileComponenet,Countercomponent,StyleOperaterComponenet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
