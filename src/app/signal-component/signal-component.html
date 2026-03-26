@@ -1,0 +1,11 @@
+<h1>signal-component</h1>
+<h2>signal will reflect the value of count in ts file in real time</h2>
+<h2>{{count()}}</h2>
+<button (click)="count.set(count()+1)">Increment</button>
+<button (click)="count.set(count()-1)">Decrement</button>
+
+
+<h1>Computed Signal</h1>
+{{z()}}
+<button (click)="showvalue()">Show Value</button>
+<button (click)="updatex()">Update x</button>
