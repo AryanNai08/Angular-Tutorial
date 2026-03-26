@@ -7,17 +7,42 @@ import { TitleStrategy } from "@angular/router";
     })
 export class ProfileComponenet {
  
-    age:number|string=25;
+    // button click event
+    // age:number|string=25;
 
-    HandleClick(){
-        alert("Button Clicked");
-        console.log("Button Clicked");
-        this.otherfun();    
+    // HandleClick(){
+    //     alert("Button Clicked");
+    //     console.log("Button Clicked");
+    //     this.otherfun();    
+    // }
+    // otherfun(){
+    //     console.log("Other function called");
+    // }
+    // changeAge(newAge: string | number) {
+    // this.age = newAge;
+    // }
+
+
+    // get and set 
+    name="";
+    displayName="";
+    getName(event:Event){
+        this.name=(event.target as HTMLInputElement).value;
+        
     }
-    otherfun(){
-        console.log("Other function called");
+    showName(){
+        this.displayName=this.name;
     }
-    changeAge(newAge: string | number) {
-    this.age = newAge;
+    setName(){
+        this.name="Aryan";
+    }
+
+    //refrence template
+    email="";
+    showEmail(val:string){
+        this.email=val;
+    }
+    setEmail(){
+        this.email="aryannai941@gmail.com";
     }
 }

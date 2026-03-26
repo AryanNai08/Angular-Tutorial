@@ -1,9 +1,29 @@
 <h1>Profile page</h1>
-<button (click)="HandleClick()">Click Me</button>
+<!-- button click event -->
+<!-- <button (click)="HandleClick()">Click Me</button>
 <h2>Age: {{ age }}</h2>
 
 <input type="text" #ageInput placeholder="Enter new age">
 
 <button (click)="changeAge(ageInput.value)">
   Change Age
-</button>
+</button> -->
+
+
+<!-- get and set -->
+ <h1>Get and set input field</h1>
+ <h2>Username is:{{displayName}}</h2>
+ <input type="text" value="{{name}}" (input)="getName($event)" placeholder="Enter user name">
+ <br>
+ <button (click)="showName()">Get Value</button>
+ <br>
+ <button (click)="setName()">Set Value</button>
+
+
+ <h1>Using refrence template</h1>
+  <h2>Email is:{{email}}</h2>
+  <input type="text" value="{{email}}" #emailfield>
+ <br>
+ <button (click)="showEmail(emailfield.value)">Get Value</button>
+ <br>
+ <button (click)="setEmail()">Set Value</button>
