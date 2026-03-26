@@ -5,10 +5,11 @@ import { ProfileComponenet } from './profile/profile';
 import { count } from 'rxjs';
 import { Countercomponent } from './countercomponent/countercomponent';
 import { StyleOperaterComponenet } from './style-operater-componenet/style-operater-componenet';
+import { ControlFlowComponent } from './control-flow-component/control-flow-component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Login,ProfileComponenet,Countercomponent,StyleOperaterComponenet],
+  imports: [RouterOutlet,Login,ProfileComponenet,Countercomponent,StyleOperaterComponenet,ControlFlowComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

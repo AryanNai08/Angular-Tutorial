@@ -1,0 +1,77 @@
+<p>control-flow-component</p>
+
+<h3>If statement</h3>
+<button (click)="toggle()">Toggle</button>
+@if(display){
+    <div style="width: 200px; height: 200px; background-color: green; border-radius: 20px;"></div>
+}
+
+<hr>
+<h3>If-Else statement</h3>
+<button (click)="toggleDiv()">{{toggled?'Show red div':'show green div'}}</button>
+@if(toggled){
+    <div style="width: 200px; height: 200px; background-color: green; border-radius: 20px;"></div>
+}
+@else{
+    <div style="width: 200px; height: 200px; background-color: red; border-radius: 20px;"></div>
+}
+
+<hr>
+<h3>Else-if statement</h3>
+<button (click)="HandleColor(1)">Red</button>
+<button (click)="HandleColor(2)">Green</button>
+<button (click)="HandleColor(3)">Blue</button>
+<button (click)="HandleColor(0)">Other</button>
+<input type="number" (input)="HandleEvent($event)">
+
+@if(color==1){
+    <div style="height: 200px; width: 200px; border-radius: 20px; background-color: red;"></div>
+}
+@else if(color==2){
+        <div style="height: 200px; width: 200px; border-radius: 20px; background-color: green;"></div>
+}
+@else if(color==3){
+        <div style="height: 200px; width: 200px; border-radius: 20px; background-color: blue;"></div>
+}
+@else{
+        <div style="height: 200px; width: 200px; border-radius: 20px; background-color: black;"></div>
+}
+
+<hr>
+<h3>Switch Case statement</h3>
+<button (click)="HandleColorSwtich('red')">Red</button>
+<button (click)="HandleColorSwtich('green')">Green</button>
+<button (click)="HandleColorSwtich('blue')">Blue</button>
+<button (click)="HandleColorSwtich('other')">Other</button>
+
+@switch(switchcolor){
+    @case('red'){
+        <h1 style="background-color: red; color: white;">Red</h1>
+    }
+    @case('green'){
+        <h1 style="background-color: green; color: white;">Green</h1>
+    }
+    @case('blue'){
+        <h1 style="background-color: blue; color: white;">Blue</h1>
+    }
+    @default{
+        <h1 style="background-color: black; color: white;">Other</h1>
+    }
+}
+
+<hr>
+<h3>For Loop</h3>
+@for(user of users;track user){
+    <p style="height:fit-content; width:fit-content; border-radius: 10px; background-color:brown; color: white;">{{user}}</p>
+}
+
+@for(student of students;track student.email){
+    <h4>
+        <span>{{student.name}}</span>
+        <span>{{student.age}}</span>
+        <button (click)="getmail(student.email)">Get Email</button>
+        @if(email== student.email){
+        <span>{{student.email}}</span>
+        }
+    </h4>
+}
