@@ -1,7 +1,9 @@
 import { Component } from "@angular/core";
 import { TitleStrategy } from "@angular/router";
+import { FormsModule } from "@angular/forms";
 @Component({
         selector:'app-profile',
+        imports:[FormsModule],
         templateUrl:'./profile.html',
         styleUrl:'./profile.css' ,
     })
@@ -45,4 +47,7 @@ export class ProfileComponenet {
     setEmail(){
         this.email="aryannai941@gmail.com";
     }
+
+    // frommodule-ngmodel
+    Fname=""
 }

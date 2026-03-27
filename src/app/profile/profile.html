@@ -10,7 +10,7 @@
 </button> -->
 
 
-<!-- get and set -->
+<!-- get and set
  <h1>Get and set input field</h1>
  <h2>Username is:{{displayName}}</h2>
  <input type="text" value="{{name}}" (input)="getName($event)" placeholder="Enter user name">
@@ -26,4 +26,7 @@
  <br>
  <button (click)="showEmail(emailfield.value)">Get Value</button>
  <br>
- <button (click)="setEmail()">Set Value</button>
+ <button (click)="setEmail()">Set Value</button> -->
+
+ <input [(ngModel)]="Fname" type="text" name="" id="" placeholder="Enter ur name">
+ {{Fname}}
