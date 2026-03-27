@@ -7,10 +7,11 @@ import { Countercomponent } from './countercomponent/countercomponent';
 import { StyleOperaterComponenet } from './style-operater-componenet/style-operater-componenet';
 import { ControlFlowComponent } from './control-flow-component/control-flow-component';
 import { SignalComponent } from './signal-component/signal-component';
+import { EffectComponenet } from './effect-componenet/effect-componenet';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Login,ProfileComponenet,Countercomponent,StyleOperaterComponenet,ControlFlowComponent,SignalComponent],
+  imports: [RouterOutlet,Login,ProfileComponenet,Countercomponent,StyleOperaterComponenet,ControlFlowComponent,SignalComponent,EffectComponenet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
