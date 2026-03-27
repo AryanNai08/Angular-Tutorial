@@ -14,7 +14,7 @@ import { Header } from './header/header';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Login,ProfileComponenet,Countercomponent,StyleOperaterComponenet,ControlFlowComponent,SignalComponent,EffectComponenet,ToDoList,Directives,RouterOutlet,RouterLink,Header],
+  imports: [RouterOutlet,Login,ProfileComponenet,Countercomponent,StyleOperaterComponenet,ControlFlowComponent,SignalComponent,EffectComponenet,ToDoList,Directives,RouterOutlet,RouterLink,Header,],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
