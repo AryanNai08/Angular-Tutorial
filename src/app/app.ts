@@ -9,10 +9,11 @@ import { ControlFlowComponent } from './control-flow-component/control-flow-comp
 import { SignalComponent } from './signal-component/signal-component';
 import { EffectComponenet } from './effect-componenet/effect-componenet';
 import { ToDoList } from './to-do-list/to-do-list';
+import { Directives } from './directives/directives';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Login,ProfileComponenet,Countercomponent,StyleOperaterComponenet,ControlFlowComponent,SignalComponent,EffectComponenet,ToDoList],
+  imports: [RouterOutlet,Login,ProfileComponenet,Countercomponent,StyleOperaterComponenet,ControlFlowComponent,SignalComponent,EffectComponenet,ToDoList,Directives],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

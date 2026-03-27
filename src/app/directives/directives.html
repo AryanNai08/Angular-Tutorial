@@ -1,0 +1,28 @@
+<p>directives works!</p>
+
+<h1>NgIF</h1>
+<a href="#" *ngIf="login; else elseblock">Logout</a>
+<ng-template #elseblock>
+    <a href="#" >Login</a>
+</ng-template>
+
+<h1>Ngfor</h1>
+<ul>
+    <li *ngFor="let x of students">
+        {{x}}
+    </li>
+</ul>
+
+<ul>
+    <li *ngFor="let x of studentdata">
+        {{x.name}}-{{x.age}}
+    </li>
+</ul>
+
+<h1>NgSwtich</h1>
+<div [ngSwitch]="color">
+    <h1 *ngSwitchCase="'red'" style="background-color: red;">Red</h1>
+    <h1 *ngSwitchCase="'green'" style="background-color: green;">Green</h1>
+    <h1 *ngSwitchCase="'blue'" style="background-color: blue;">Blue</h1>
+    <h1 *ngSwitchDefault style="background-color: yellow;">Yellow</h1>
+</div>
