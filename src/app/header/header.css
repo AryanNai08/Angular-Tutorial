@@ -1,0 +1,27 @@
+nav{
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+ul{
+    display: flex;
+    list-style-type: none;
+    width: 200px;
+    justify-content: space-between;
+}
+
+ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    display: inline-block; /* ✅ IMPORTANT */
+    padding: 10px;         /* better than fixed height/width */
+}
+
+.active {
+    color: white;
+    background-color: green;
+    border-radius: 5px;
+}
