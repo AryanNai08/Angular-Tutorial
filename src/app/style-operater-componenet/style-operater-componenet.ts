@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
   // styleUrl: './style-operater-componenet.css',
   styles:['#tsstyle{color:green}']
 })
-export class StyleOperaterComponenet {}
+export class StyleOperaterComponenet {
+  color="red"
+  zoom=true
+
+  zoomout(){
+    this.zoom=!this.zoom
+  }
+}

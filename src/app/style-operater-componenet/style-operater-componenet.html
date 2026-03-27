@@ -7,3 +7,12 @@
 <h2>Internal style</h2>
 <h2 style="color: blue;">Inline style</h2>
 <h2 id="tsstyle">Style applied through ts file</h2>
+
+
+
+<hr>
+<h2>Dynamic Styling</h2>
+<h3 [style.backgroundColor]="color">This is example of dynamic styling.</h3>
+
+<h1 [style.fontSize]="zoom ? '100px':'20px'">Heading</h1>
+<button (click)="zoomout()">zoom</button>
