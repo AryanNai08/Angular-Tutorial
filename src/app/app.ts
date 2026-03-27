@@ -8,10 +8,11 @@ import { StyleOperaterComponenet } from './style-operater-componenet/style-opera
 import { ControlFlowComponent } from './control-flow-component/control-flow-component';
 import { SignalComponent } from './signal-component/signal-component';
 import { EffectComponenet } from './effect-componenet/effect-componenet';
+import { ToDoList } from './to-do-list/to-do-list';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Login,ProfileComponenet,Countercomponent,StyleOperaterComponenet,ControlFlowComponent,SignalComponent,EffectComponenet],
+  imports: [RouterOutlet,Login,ProfileComponenet,Countercomponent,StyleOperaterComponenet,ControlFlowComponent,SignalComponent,EffectComponenet,ToDoList],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
