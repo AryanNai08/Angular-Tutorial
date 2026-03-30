@@ -52,4 +52,13 @@
           <!-- reactive form -->
            <!-- <app-reactive-form></app-reactive-form> -->
             <!-- template form -->
-              <app-template-form></app-template-form>
+              <!-- <app-template-form></app-template-form> -->
+
+              pass data from parent to child component using @Input
+               <app-user [username]="username"></app-user>
+
+               <select #name (change)="OnChange(name.value)">
+                 <option value="Aryan">Aryan</option>
+                 <option value="kartik">kartik</option>
+                 <option value="nikhil">nikhil</option>
+              </select>

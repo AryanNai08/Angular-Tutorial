@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -20,5 +20,7 @@ export class User {
       console.log('User Name:', this.name);
     });
   }
+
+  @Input() username: string = ''; 
 }
 

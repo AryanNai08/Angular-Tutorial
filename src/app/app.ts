@@ -14,10 +14,11 @@ import { Header } from './header/header';
 import { PassData } from './pass-data/pass-data';
 import { ReactiveForm } from './reactive-form/reactive-form';
 import { TemplateForm } from './template-form/template-form';
+import { User } from './user/user';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Login,ProfileComponenet,Countercomponent,StyleOperaterComponenet,ControlFlowComponent,SignalComponent,EffectComponenet,ToDoList,Directives,RouterOutlet,RouterLink,Header,PassData,ReactiveForm,TemplateForm],
+  imports: [RouterOutlet,Login,ProfileComponenet,Countercomponent,StyleOperaterComponenet,ControlFlowComponent,SignalComponent,EffectComponenet,ToDoList,Directives,RouterOutlet,RouterLink,Header,PassData,ReactiveForm,TemplateForm,User],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -48,4 +49,9 @@ export class App {
     course:'Vue'
   }
     ];
+
+    username="";
+    OnChange(user:string){
+      this.username=user;
+    }
 }
