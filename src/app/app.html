@@ -72,5 +72,13 @@
  } -->
 
  <!-- pipe example -->
-  <app-profile></app-profile>
+  <!-- <app-profile></app-profile> -->
+
+  <h2>Product Service Example</h2>
+  @for (product of products; track product.id) {
+    <p>
+      {{ product.name }} - Rs. {{ product.price }} -
+      {{ product.inStock ? 'In Stock' : 'Out of Stock' }}
+    </p>
+  }
                

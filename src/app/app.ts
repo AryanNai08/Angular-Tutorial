@@ -16,6 +16,7 @@ import { ReactiveForm } from './reactive-form/reactive-form';
 import { TemplateForm } from './template-form/template-form';
 import { User } from './user/user';
 import { ChildComponent } from './child-component/child-component';
+import { ProductItem, ProductService } from './services/product';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +25,12 @@ import { ChildComponent } from './child-component/child-component';
   styleUrl: './app.css'
 })
 export class App {
+  products: ProductItem[] = [];
+
+  constructor(private productService: ProductService) {
+    this.products = this.productService.getProducts();
+  }
+
   protected readonly title = signal('angular-app');
   protected readonly name = signal('Aryan Nai');  
   helloworld(){
