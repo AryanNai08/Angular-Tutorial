@@ -1,5 +1,5 @@
 <p>template-form works!</p>
-<form #myForm="ngForm" (ngSubmit)="addDetails(myForm.value)">
+<!-- <form #myForm="ngForm" (ngSubmit)="addDetails(myForm.value)">
   <input type="text"  name="name" placeholder="Enter your name" ngModel>
   <br><br>
   <input type="password"  name="password" placeholder="Enter your password" ngModel>
@@ -20,4 +20,24 @@
     <h3>{{userDetails?.password}}</h3>
     <h3>{{userDetails?.email}}</h3>
     <h3>{{userDetails?.gender}}</h3>
-    <h3>{{userDetails?.age}}</h3>
+    <h3>{{userDetails?.age}}</h3> -->
+
+    <form #myForm="ngForm" (ngSubmit)="addDetails(myForm.value)">
+  <input #name="ngModel" required type="text"  name="name" placeholder="Enter your name" ngModel>
+      <span *ngIf="name.invalid && name.touched">Name is Required</span>
+  <br><br>
+  <input #password="ngModel" required minlength="8" maxlength="12 " type="password"  name="password" placeholder="Enter your password" ngModel>
+      <span *ngIf="password.invalid && password.touched"> Please enter valid Password</span>
+  <br><br>
+  <select #gender="ngModel" required name="gender" ngModel>
+    <option value="">Select Gender</option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+  </select>
+      <span *ngIf="gender.invalid && gender.touched">Gender is Required</span>
+  <input #age="ngModel" required type="range" min="0" max="100" ngModel name="age">
+      <span *ngIf="age.invalid && age.touched">Age is Required</span>
+  <br><br>
+  <button [disabled]="myForm.invalid" type="submit">Add User</button>
+    </form>
+
