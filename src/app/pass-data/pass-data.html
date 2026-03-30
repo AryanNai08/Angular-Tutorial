@@ -1,0 +1,13 @@
+<h2>pass data from one component to another using routes!</h2>
+<a [routerLink]="['/pass-data', 'Aryan Nai']">Go</a>
+
+<h2>pass data using button click</h2>
+<button (click)="goToProfile()">Go</button>
+
+<h2>pass data using query params</h2>
+<button (click)="goWithQueryParams()">Go With Query Params</button>
+
+<h3>Received Data</h3>
+<p><strong>Route Param (name):</strong> {{ name }}</p>
+<p><strong>Query Param (course):</strong> {{ course }}</p>
+<p><strong>Query Param (city):</strong> {{ city }}</p>

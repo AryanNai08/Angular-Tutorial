@@ -11,10 +11,11 @@ import { EffectComponenet } from './effect-componenet/effect-componenet';
 import { ToDoList } from './to-do-list/to-do-list';
 import { Directives } from './directives/directives';
 import { Header } from './header/header';
+import { PassData } from './pass-data/pass-data';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Login,ProfileComponenet,Countercomponent,StyleOperaterComponenet,ControlFlowComponent,SignalComponent,EffectComponenet,ToDoList,Directives,RouterOutlet,RouterLink,Header,],
+  imports: [RouterOutlet,Login,ProfileComponenet,Countercomponent,StyleOperaterComponenet,ControlFlowComponent,SignalComponent,EffectComponenet,ToDoList,Directives,RouterOutlet,RouterLink,Header,PassData],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
