@@ -22,5 +22,6 @@ export class User {
   }
 
   @Input() username: string = ''; 
+  @Input() city: string = '';
 }
 
