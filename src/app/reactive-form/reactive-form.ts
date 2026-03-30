@@ -1,10 +1,11 @@
+import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormControl,FormGroup,ReactiveFormsModule } from '@angular/forms';
+import { FormControl,FormGroup,ReactiveFormsModule, Validators } from '@angular/forms';
 import { form } from '@angular/forms/signals';
 
 @Component({
   selector: 'app-reactive-form',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,NgIf],
   templateUrl: './reactive-form.html',
   styleUrl: './reactive-form.css',
 })
@@ -21,20 +22,36 @@ export class ReactiveForm {
   //   this.name.setValue('Aryan B Nai');
   //   this.password.setValue('123456');
   // }
+  // onSubmit(){
+  //   console.log('Name:', this.myForm.value.name);
+  //   console.log('Password:', this.myForm.value.password);
+  // }
 
   myForm=new FormGroup({
-    name:new FormControl(''),
-    password:new FormControl('')
+    name:new FormControl('',[Validators.required]),
+    password:new FormControl('',[Validators.required,Validators.minLength(8)]),
+    email:new FormControl('',[Validators.required,Validators.email])
   });
 
-  onSubmit(){
-    console.log('Name:', this.myForm.value.name);
-    console.log('Password:', this.myForm.value.password);
+
+  get name(){
+    return this.myForm.get('name');
   }
 
-  setvalue(){
-    this.myForm.setValue({
-      name:'Aryan B Nai',password:'123456'
-    });
+  get password(){
+    return this.myForm.get('password');
   }
+  get email(){
+    return this.myForm.get('email');
+  }
+
+    onSubmit() {
+    console.log(this.myForm.value);
+  }
+
+  // setvalue(){
+  //   this.myForm.setValue({
+  //     name:'Aryan B Nai',password:'123456'
+  //   });
+  // }
 }

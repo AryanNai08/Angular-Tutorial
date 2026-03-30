@@ -1,25 +1,25 @@
-<p>reactive-form works!</p>
-
-<!-- <form action="">
-    <input type="text"  [formControl]="name"><br><br>
-        
-    <input type="password"  [formControl]="password"><br><br>
-    
-    <button type="button" (click)="onLogin()">Login</button>
-    <button type="button" (click)="setvalue()">Set Value</button>
-
-    {{name.value}}
-    {{password.value}}
-</form> -->
-
 <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-    <input type="text"  formControlName="name"><br><br>
-        
-    <input type="password"  formControlName="password"><br><br>
-    
-    <button>Login</button>
-    <button type="button" (click)="setvalue()">Set Value</button>
 
-    {{name.value}}
-    {{password.value}}
+  <input type="text" formControlName="name" placeholder="Enter your name">
+  <span *ngIf="name?.touched && name?.hasError('required')">
+    Name is required
+  </span><br><br>
+  
+
+  <input type="password" formControlName="password" placeholder="Enter your password">
+  <span *ngIf="password?.touched && password?.errors as errors">
+    <span *ngIf="errors['required']">Password is required</span>
+    <span *ngIf="errors['minlength']">Password must be at least 8 characters</span>
+  </span><br><br>
+  
+
+  <input type="email" formControlName="email" placeholder="Enter your email">
+  <span *ngIf="email?.touched && email?.errors as errors">
+    <span *ngIf="errors['required']">Email is required</span>
+    <span *ngIf="errors['email']">Please enter a valid email</span>
+  </span><br><br>
+  
+
+  <button type="submit" [disabled]="myForm.invalid">Submit</button>
+
 </form>
