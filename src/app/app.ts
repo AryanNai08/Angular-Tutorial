@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { Login } from './login/login';
 import { ProfileComponenet } from './profile/profile';
 import { count } from 'rxjs';
@@ -26,4 +26,29 @@ export class App {
     let x=20;
     console.log(x);
   }
+
+  users= [{
+    id:1,
+  name:'Aryan',
+  city:'Pune',
+  course:'Angular'
+  },
+  {
+    id:2,
+    name:'John',
+    city:'Mumbai',
+    course:'React'
+  },
+  {
+    id:3,
+    name:'Smith',
+    city:'Delhi',
+    course:'Vue'
+  }
+    ];
+
+    constructor(private router: Router) {}
+    ngOnInit(){
+      
+    }
 }

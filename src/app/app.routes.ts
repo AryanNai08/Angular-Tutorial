@@ -4,6 +4,7 @@ import { ProfileComponenet } from './profile/profile';
 import { Home } from './home/home';
 import { PageNotFound } from './page-not-found/page-not-found';
 import { PassData } from './pass-data/pass-data';
+import { User } from './user/user';
 
 export const routes: Routes = [
     {path:'login',component:Login},
@@ -11,6 +12,7 @@ export const routes: Routes = [
     {path:'',component:Home},
     {path:'pass-data',component:PassData},
     {path:'pass-data/:name',component:PassData},
+    {path:'users/:id/:name',component:User},
     {path:'**',component:PageNotFound}
 ];
 

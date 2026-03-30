@@ -41,3 +41,10 @@
       <!-- pass data from one component to another using routes -->
        <!-- <app-pass-data></app-pass-data>  -->
          <!-- we comment this linenecause we are rendering this component based on the route and if we render it here then it will always render and we want to render it only when we navigate to that route  -->
+
+         <!-- dynamic routing -->
+          <ul>
+            @for(user of users;track user.id) {
+              <li><a [routerLink]="['/users', user.id, user.name]">{{user.name}}</a></li>
+            } 
+          </ul>
