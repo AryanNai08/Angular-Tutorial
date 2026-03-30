@@ -13,10 +13,11 @@ import { Directives } from './directives/directives';
 import { Header } from './header/header';
 import { PassData } from './pass-data/pass-data';
 import { ReactiveForm } from './reactive-form/reactive-form';
+import { TemplateForm } from './template-form/template-form';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Login,ProfileComponenet,Countercomponent,StyleOperaterComponenet,ControlFlowComponent,SignalComponent,EffectComponenet,ToDoList,Directives,RouterOutlet,RouterLink,Header,PassData,ReactiveForm],
+  imports: [RouterOutlet,Login,ProfileComponenet,Countercomponent,StyleOperaterComponenet,ControlFlowComponent,SignalComponent,EffectComponenet,ToDoList,Directives,RouterOutlet,RouterLink,Header,PassData,ReactiveForm,TemplateForm],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
