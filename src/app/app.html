@@ -34,8 +34,8 @@
     <!-- <app-directives></app-directives> -->
 
     <!-- rotues -->
-     <app-header></app-header>
-      <router-outlet></router-outlet>  
+     <!-- <app-header></app-header>
+      <router-outlet></router-outlet>   -->
       <!-- this line is needed to render the component based on the route -->
 
       <!-- pass data from one component to another using routes -->
@@ -43,8 +43,11 @@
          <!-- we comment this linenecause we are rendering this component based on the route and if we render it here then it will always render and we want to render it only when we navigate to that route  -->
 
          <!-- dynamic routing -->
-          <ul>
+          <!-- <ul>
             @for(user of users;track user.id) {
-              <li><a [routerLink]="['/users', user.id, user.name]">{{user.name}}</a></li>
+              <li><a [routerLink]="['users', user.id, user.name]">{{user.name}}</a></li>
             } 
-          </ul>
+          </ul> -->
+
+          <!-- reactive form -->
+           <app-reactive-form></app-reactive-form>

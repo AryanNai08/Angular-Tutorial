@@ -12,10 +12,11 @@ import { ToDoList } from './to-do-list/to-do-list';
 import { Directives } from './directives/directives';
 import { Header } from './header/header';
 import { PassData } from './pass-data/pass-data';
+import { ReactiveForm } from './reactive-form/reactive-form';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Login,ProfileComponenet,Countercomponent,StyleOperaterComponenet,ControlFlowComponent,SignalComponent,EffectComponenet,ToDoList,Directives,RouterOutlet,RouterLink,Header,PassData],
+  imports: [RouterOutlet,Login,ProfileComponenet,Countercomponent,StyleOperaterComponenet,ControlFlowComponent,SignalComponent,EffectComponenet,ToDoList,Directives,RouterOutlet,RouterLink,Header,PassData,ReactiveForm],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -46,9 +47,4 @@ export class App {
     course:'Vue'
   }
     ];
-
-    constructor(private router: Router) {}
-    ngOnInit(){
-      
-    }
 }

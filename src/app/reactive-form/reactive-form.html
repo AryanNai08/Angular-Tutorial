@@ -1,0 +1,13 @@
+<p>reactive-form works!</p>
+
+<form action="">
+    <input type="text"  [formControl]="name"><br><br>
+        
+    <input type="password"  [formControl]="password"><br><br>
+    
+    <button type="button" (click)="onLogin()">Login</button>
+    <button type="button" (click)="setvalue()">Set Value</button>
+
+    {{name.value}}
+    {{password.value}}
+</form>
