@@ -1,9 +1,10 @@
 import { Component } from "@angular/core";
 import { TitleStrategy } from "@angular/router";
 import { FormsModule } from "@angular/forms";
+import { CommonModule } from "@angular/common";
 @Component({
         selector:'app-profile',
-        imports:[FormsModule],
+        imports:[FormsModule,CommonModule ],
         templateUrl:'./profile.html',
         styleUrl:'./profile.css' ,
     })
@@ -50,4 +51,7 @@ export class ProfileComponenet {
 
     // frommodule-ngmodel
     Fname=""
+
+    firstname="Aryan";
+    date=new Date();
 }

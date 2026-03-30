@@ -28,5 +28,11 @@
  <br>
  <button (click)="setEmail()">Set Value</button> -->
 
- <input [(ngModel)]="Fname" type="text" name="" id="" placeholder="Enter ur name">
- {{Fname}}
+ <!-- <input [(ngModel)]="Fname" type="text" name="" id="" placeholder="Enter ur name">
+ {{Fname}} -->
+
+ {{firstname | uppercase}}
+ {{firstname | lowercase}}
+ {{date | date:'fullDate'}}
+ {{date | date:'shortTime'}}
+  {{date | date:'shortTime' | uppercase}}
