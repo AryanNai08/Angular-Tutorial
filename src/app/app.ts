@@ -15,10 +15,11 @@ import { PassData } from './pass-data/pass-data';
 import { ReactiveForm } from './reactive-form/reactive-form';
 import { TemplateForm } from './template-form/template-form';
 import { User } from './user/user';
+import { ChildComponent } from './child-component/child-component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Login,ProfileComponenet,Countercomponent,StyleOperaterComponenet,ControlFlowComponent,SignalComponent,EffectComponenet,ToDoList,Directives,RouterOutlet,RouterLink,Header,PassData,ReactiveForm,TemplateForm,User],
+  imports: [RouterOutlet,Login,ProfileComponenet,Countercomponent,StyleOperaterComponenet,ControlFlowComponent,SignalComponent,EffectComponenet,ToDoList,Directives,RouterOutlet,RouterLink,Header,PassData,ReactiveForm,TemplateForm,User,ChildComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -53,5 +54,10 @@ export class App {
     username="";
     OnChange(user:string){
       this.username=user;
+    }
+    userss: string[] = [];
+    handleUsers(userss:string[]){
+      console.log("Users from child component:", userss);
+      this.userss = userss;
     }
 }
