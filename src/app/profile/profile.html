@@ -36,3 +36,10 @@
  {{date | date:'fullDate'}}
  {{date | date:'shortTime'}}
   {{date | date:'shortTime' | uppercase}}
+
+  <br>
+  <h2>Custom pipe</h2>
+  <!-- custom pipe -->
+   {{amount}} Dollar is {{amount | currencyConverter}} rupees in Indian currency.
+   <br>
+   {{amount}} Yen is {{amount | currencyConverter:1.68}} rupees in Indian currency.

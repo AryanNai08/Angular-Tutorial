@@ -2,9 +2,10 @@ import { Component } from "@angular/core";
 import { TitleStrategy } from "@angular/router";
 import { FormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
+import { CurrencyConverterPipe } from "../pipe/currency-converter-pipe";
 @Component({
         selector:'app-profile',
-        imports:[FormsModule,CommonModule ],
+        imports:[FormsModule,CommonModule,CurrencyConverterPipe ],
         templateUrl:'./profile.html',
         styleUrl:'./profile.css' ,
     })
@@ -54,4 +55,5 @@ export class ProfileComponenet {
 
     firstname="Aryan";
     date=new Date();
+    amount=100;
 }
