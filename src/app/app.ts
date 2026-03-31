@@ -2,7 +2,7 @@ import { Component, signal } from '@angular/core';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { Login } from './login/login';
 import { ProfileComponenet } from './profile/profile';
-import { count } from 'rxjs';
+import { count, Observable } from 'rxjs';
 import { Countercomponent } from './countercomponent/countercomponent';
 import { StyleOperaterComponenet } from './style-operater-componenet/style-operater-componenet';
 import { ControlFlowComponent } from './control-flow-component/control-flow-component';
@@ -24,14 +24,14 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Login, ProfileComponenet, Countercomponent, StyleOperaterComponenet, ControlFlowComponent, SignalComponent, EffectComponenet, ToDoList, Directives, RouterOutlet, RouterLink, Header, PassData, ReactiveForm, TemplateForm, UserComponent, ChildComponent,FormsModule],
+  imports: [RouterOutlet, Login, ProfileComponenet, Countercomponent, StyleOperaterComponenet, ControlFlowComponent, SignalComponent, EffectComponenet, ToDoList, Directives, RouterOutlet, RouterLink, Header, PassData, ReactiveForm, TemplateForm, UserComponent, ChildComponent, FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
   products: ProductItem[] = [];
 
-  constructor(private productService: ProductService, private userService: Users,private cdr: ChangeDetectorRef) {
+  constructor(private productService: ProductService, private userService: Users, private cdr: ChangeDetectorRef) {
   }
 
   protected readonly title = signal('angular-app');
@@ -81,30 +81,50 @@ export class App {
     })
   }
 
-  
 
-    userlist: User[] = [];
-    getusers(){
-      this.userService.getUserslist().subscribe((data: User[]) => {
-        this.userlist = data;
-        this.cdr.detectChanges();
-      });
 
-    }
+  userlist: User[] = [];
+  getusers() {
+    this.userService.getUserslist().subscribe((data: User[]) => {
+      this.userlist = data;
+      this.cdr.detectChanges();
+    });
 
-    addUser(user:User){
+  }
+
+  addUser(user: User) {
+    if (!this.selectedUser) {
       this.userService.saveUser(user).subscribe((data: User) => {
         console.log("User saved:", data);
         this.getusers(); // Refresh the user list after adding a new user
       });
-    }  
-
-    deleteUser(id: string){
-      const url = `http://localhost:3000/users`;
-      this.userService.deleteUser(id).subscribe((data:User) => {
-        console.log(`User with id ${id} deleted`+data);
-        this.getusers(); // Refresh the user list after deletion
+    }else{
+      const userData={...user, id:this.selectedUser.id};
+      this.userService.updateUser(userData).subscribe((data: User) => {
+        console.log("User updated:", data);
+        this.getusers(); // Refresh the user list after updating the user
       });
     }
 
   }
+
+  deleteUser(id: string) {
+    const url = `http://localhost:3000/users`;
+    this.userService.deleteUser(id).subscribe((data: User) => {
+      console.log(`User with id ${id} deleted` + data);
+      this.getusers(); // Refresh the user list after deletion
+    });
+  }
+
+  selectedUser: User | undefined;
+  selectUser(id: string) {
+    this.userService.selectUser(id).subscribe((data: User) => {
+      console.log(`User with id ${id} selected` + data);
+      this.selectedUser = data;
+      this.cdr.detectChanges();
+    });
+  }
+
+  
+
+}
