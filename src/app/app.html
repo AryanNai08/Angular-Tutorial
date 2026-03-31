@@ -82,7 +82,7 @@
     </p>
   } -->
 
-  <button (click)="getproducts()">Refresh Products</button>
+  <!-- <button (click)="getproducts()">Refresh Products</button>
   @for (product of productslist; track product.id) {
     <ul>
       <li><b>Name:</b>{{product.name}}</li>
@@ -92,7 +92,19 @@
       <li><img src="{{product.thumbnail}}" alt=""></li>
     </ul>
   } 
-  
+   -->
+   
+   <h2>Post</h2>
+   <form #userForm="ngForm" (ngSubmit)="addUser(userForm.value)">
+     <input type="text" name="name" ngModel placeholder="Name">
+     <br>
+     <input type="text" name="age" ngModel placeholder="Age">
+     <br>
+     <input type="email" name="email" ngModel placeholder="Email">
+     <br>
+     <button>Add User</button>
+    </form>
+    
     <button (click)="getusers()">Get Users</button>
   @for (user of userlist; track user.id) {
     <ul>
