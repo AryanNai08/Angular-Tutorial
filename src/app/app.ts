@@ -17,63 +17,77 @@ import { TemplateForm } from './template-form/template-form';
 import { User } from './user/user';
 import { ChildComponent } from './child-component/child-component';
 import { ProductItem, ProductService } from './services/product';
+import { Users } from './services/users';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,Login,ProfileComponenet,Countercomponent,StyleOperaterComponenet,ControlFlowComponent,SignalComponent,EffectComponenet,ToDoList,Directives,RouterOutlet,RouterLink,Header,PassData,ReactiveForm,TemplateForm,User,ChildComponent],
+  imports: [RouterOutlet, Login, ProfileComponenet, Countercomponent, StyleOperaterComponenet, ControlFlowComponent, SignalComponent, EffectComponenet, ToDoList, Directives, RouterOutlet, RouterLink, Header, PassData, ReactiveForm, TemplateForm, User, ChildComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
   products: ProductItem[] = [];
 
-  constructor(private productService: ProductService) {
+  constructor(private productService: ProductService, private userService: Users,private cdr: ChangeDetectorRef) {
   }
 
   protected readonly title = signal('angular-app');
-  protected readonly name = signal('Aryan Nai');  
-  helloworld(){
-    let x=20;
+  protected readonly name = signal('Aryan Nai');
+  helloworld() {
+    let x = 20;
     console.log(x);
   }
 
-  users= [{
-    id:1,
-  name:'Aryan',
-  city:'Pune',
-  course:'Angular'
+  users = [{
+    id: 1,
+    name: 'Aryan',
+    city: 'Pune',
+    course: 'Angular'
   },
   {
-    id:2,
-    name:'John',
-    city:'Mumbai',
-    course:'React'
+    id: 2,
+    name: 'John',
+    city: 'Mumbai',
+    course: 'React'
   },
   {
-    id:3,
-    name:'Smith',
-    city:'Delhi',
-    course:'Vue'
+    id: 3,
+    name: 'Smith',
+    city: 'Delhi',
+    course: 'Vue'
   }
-    ];
+  ];
 
-    username="";
-    OnChange(user:string){
-      this.username=user;
+  username = "";
+  OnChange(user: string) {
+    this.username = user;
+  }
+  userss: string[] = [];
+  handleUsers(userss: string[]) {
+    console.log("Users from child component:", userss);
+    this.userss = userss;
+  }
+
+  productslist: any;
+
+  getproducts() {
+    this.productService.getProductlist().subscribe((data: any) => {
+      console.log(data);
+      this.productslist = data.products;
+      this.cdr.detectChanges();
+    })
+  }
+
+  
+
+    userlist: any[]= [];
+    getusers(){
+      this.userService.getUserslist().subscribe((data: any) => {
+        this.userlist = data;
+        this.cdr.detectChanges();
+      });
+
     }
-    userss: string[] = [];
-    handleUsers(userss:string[]){
-      console.log("Users from child component:", userss);
-      this.userss = userss;
-    }
 
-    productslist:any;
-
-    getproducts(){
-      this.productService.getProductlist().subscribe((data:any)=>{
-        console.log(data);
-        this.productslist=data.products;
-      })
-    
-}
-}
+  }

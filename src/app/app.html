@@ -74,13 +74,13 @@
  <!-- pipe example -->
   <!-- <app-profile></app-profile> -->
 
-  <h2>Product Service Example</h2>
+  <!-- <h2>Product Service Example</h2>
   @for (product of products; track product.id) {
     <p>
       {{ product.name }} - Rs. {{ product.price }} -
       {{ product.inStock ? 'In Stock' : 'Out of Stock' }}
     </p>
-  }
+  } -->
 
   <button (click)="getproducts()">Refresh Products</button>
   @for (product of productslist; track product.id) {
@@ -91,4 +91,13 @@
       <li><b>Category:</b>{{product.category}}</li>
       <li><img src="{{product.thumbnail}}" alt=""></li>
     </ul>
-  }     
+  } 
+  
+    <button (click)="getusers()">Get Users</button>
+  @for (user of userlist; track user.id) {
+    <ul>
+      <li><b>Name:</b>{{user.name}}</li>
+      <li><b>Age:</b>{{user.age}}</li>
+      <li><b>Email:</b>{{user.email}}</li>
+    </ul>
+  } 
