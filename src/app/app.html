@@ -81,4 +81,14 @@
       {{ product.inStock ? 'In Stock' : 'Out of Stock' }}
     </p>
   }
-               
+
+  <button (click)="getproducts()">Refresh Products</button>
+  @for (product of productslist; track product.id) {
+    <ul>
+      <li><b>Name:</b>{{product.name}}</li>
+      <li><b>Price:</b>{{product.price}}</li>
+      <li><b>Rating:</b>{{product.rating}}</li>
+      <li><b>Category:</b>{{product.category}}</li>
+      <li><img src="{{product.thumbnail}}" alt=""></li>
+    </ul>
+  }     

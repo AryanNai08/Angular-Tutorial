@@ -28,7 +28,6 @@ export class App {
   products: ProductItem[] = [];
 
   constructor(private productService: ProductService) {
-    this.products = this.productService.getProducts();
   }
 
   protected readonly title = signal('angular-app');
@@ -67,4 +66,14 @@ export class App {
       console.log("Users from child component:", userss);
       this.userss = userss;
     }
+
+    productslist:any;
+
+    getproducts(){
+      this.productService.getProductlist().subscribe((data:any)=>{
+        console.log(data);
+        this.productslist=data.products;
+      })
+    
+}
 }
