@@ -94,7 +94,7 @@
   } 
    -->
    
-   <h2>Post</h2>
+   <!-- <h2>Post</h2>
 
 <form #userForm="ngForm" (ngSubmit)="addUser(userForm.value)">
   <input type="text" name="name" [ngModel]="selectedUser?.name" placeholder="Name">
@@ -123,4 +123,8 @@
     <li><button (click)="deleteUser(user.id)">Delete</button></li>
     <li><button (click)="selectUser(user.id)">Update User</button></li>
   </ul>
-}
+} -->
+
+<h2>Lazy Loading</h2>
+<a routerLink="admin">Go to Admin Page</a>
+<router-outlet></router-outlet>
