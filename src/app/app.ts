@@ -99,4 +99,12 @@ export class App {
       });
     }  
 
+    deleteUser(id: string){
+      const url = `http://localhost:3000/users`;
+      this.userService.deleteUser(id).subscribe((data:User) => {
+        console.log(`User with id ${id} deleted`+data);
+        this.getusers(); // Refresh the user list after deletion
+      });
+    }
+
   }
